@@ -24,3 +24,5 @@ end
 scatter(If,fpp3d);
 hold on
 scatter(If,fpp2d);
+
+%% Slot Leakage Flux Calculations
