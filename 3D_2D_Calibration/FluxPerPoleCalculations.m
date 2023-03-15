@@ -77,3 +77,17 @@ for i = 1:length(If)
     leakage(i) = max(abs(new_leakageData(i,1:end)));
     leakage_pair(i) = max(abs(new_leakageData_pair(i,1:end)));
 end
+
+max_leakage = max(leakage);
+max_leakage_pair = max(leakage_pair);
+
+normalized_leakage = leakage./fpp3d'*100;
+normalized_leakage_pair = leakage_pair./fpp3d'*100;
+
+figure
+scatter(If,normalized_leakage,'LineWidth',2)
+hold on
+scatter(If,normalized_leakage_pair,'LineWidth',2)
+legend('Leakage','Leakage Pair')
+xlabel('$I_F$ (A)')
+ylabel('Leakage Flux (\% of Flux per Pole)')

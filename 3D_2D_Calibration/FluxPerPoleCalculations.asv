@@ -73,4 +73,12 @@ for j = 1:length(If)
     end
 end
 
-for i = 1:
+for i = 1:length(If)
+    leakage(i) = max(abs(new_leakageData(i,1:end)));
+    leakage_pair(i) = max(abs(new_leakageData_pair(i,1:end)));
+end
+
+max_leakage = max(leakage);
+max_leakage_pair = max(leakage_pair);
+
+normalized_leakage = leakage
