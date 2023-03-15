@@ -28,6 +28,7 @@ fpp3d = zeros(15,1); % flux per pole array of 3D results
 NumSurfaces = 1280; % number of surfaces in quarter symmetry
 poles = 8; % number of poles in quarter symmetry
 PoleSurface = NumSurfaces/poles; % number of surfaces in front of a pole
+
 data3d = data3d(1:end,2:PoleSurface+1);
 data2d = reshape(data2d,102,[]);
 data2d = data2d(1:end,31:end);
@@ -47,7 +48,29 @@ fpp3d = 2*fpp3d; % due to half symmetry in the axial direction
 %% Plotting
 scatter(If,fpp3d,'LineWidth',2);
 hold on
-scatter(If,fpp2d*880/,'LineWidth',2);
+scatter(If,fpp2d,'LineWidth',2);
 legend('3D','2D')
+xlabel('$I_{F}$ (A)')
+ylabel('Flux per Pole (Wb)')
 
 %% Slot Leakage Flux Calculations
+leakageData = xlsread("leakage_flux_3d.csv");
+
+
+for j = 1:length(If)
+    k=1;
+    for i = 2:2:length(leakageData)-1 % distinguishing the pair surfaces
+        new_leakageData(j,k) = leakageData(j,i); 
+        k = k+1;
+    end
+end
+
+for j = 1:length(If)
+    k=1;
+    for i = 3:2:length(leakageData) % distinguishing the pair surfaces
+        new_leakageData_pair(j,k) = leakageData(j,i); 
+        k = k+1;
+    end
+end
+
+for i = 1:

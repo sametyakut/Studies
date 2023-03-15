@@ -54,3 +54,26 @@ xlabel('$I_{F}$ (A)')
 ylabel('Flux per Pole (Wb)')
 
 %% Slot Leakage Flux Calculations
+leakageData = xlsread("leakage_flux_3d.csv");
+
+
+for j = 1:length(If)
+    k=1;
+    for i = 2:2:length(leakageData)-1 % distinguishing the pair surfaces
+        new_leakageData(j,k) = leakageData(j,i); 
+        k = k+1;
+    end
+end
+
+for j = 1:length(If)
+    k=1;
+    for i = 3:2:length(leakageData) % distinguishing the pair surfaces
+        new_leakageData_pair(j,k) = leakageData(j,i); 
+        k = k+1;
+    end
+end
+
+for i = 1:length(If)
+    leakage(i) = max(abs(new_leakageData(i,1:end)));
+    leakage_pair(i) = max(abs(new_leakageData_pair(i,1:end)));
+end
