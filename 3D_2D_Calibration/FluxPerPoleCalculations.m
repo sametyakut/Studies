@@ -49,5 +49,7 @@ scatter(If,fpp3d,'LineWidth',2);
 hold on
 scatter(If,fpp2d,'LineWidth',2);
 legend('3D','2D')
+xlabel('$I_{F}$ (A)')
+ylabel('Flux per Pole (Wb)')
 
 %% Slot Leakage Flux Calculations
