@@ -28,6 +28,7 @@ fpp3d = zeros(15,1); % flux per pole array of 3D results
 NumSurfaces = 1280; % number of surfaces in quarter symmetry
 poles = 8; % number of poles in quarter symmetry
 PoleSurface = NumSurfaces/poles; % number of surfaces in front of a pole
+
 data3d = data3d(1:end,2:PoleSurface+1);
 data2d = reshape(data2d,102,[]);
 data2d = data2d(1:end,31:end);
