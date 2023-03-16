@@ -53,7 +53,8 @@ scatter(If,fpp2d,'LineWidth',2);
 legend('3D','2D')
 xlabel('$I_{F}$ (A)')
 ylabel('Flux per Pole (Wb)')
-
+xlim([0 800])
+ylim([0 0.6])
 %% Slot Leakage Flux Calculations
 leakageData = xlsread("leakage_flux_3d.csv"); % data import
 
