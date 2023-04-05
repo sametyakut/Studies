@@ -104,7 +104,7 @@ Brad_3D = xlsread("Brad_If500_CoarseMesh_3D.csv");
 figure
 plot(Brad_2D(1:end,3),Brad_2D(1:end,4))
 hold on
-plot(Brad_3D(1:end,2),Brad_3D(1:end,3))
+plot(Brad_3D(1:end,2),-Brad_3D(1:end,3))
 xlim([0 Brad_2D(end,3)])
 grid on
 legend('2D','3D')
