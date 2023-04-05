@@ -45,14 +45,16 @@ end
 
 fpp3d = 2*fpp3d; % due to half symmetry in the axial direction
 
-%% Plotting
+%% Plotting Flux per Pole
+figure
 scatter(If,fpp3d,'LineWidth',2);
 hold on
 scatter(If,fpp2d,'LineWidth',2);
 legend('3D','2D')
 xlabel('$I_{F}$ (A)')
 ylabel('Flux per Pole (Wb)')
-
+xlim([0 800])
+ylim([0 0.6])
 %% Slot Leakage Flux Calculations
 leakageData = xlsread("leakage_flux_3d.csv"); % data import
 
@@ -78,12 +80,13 @@ for i = 1:length(If) % finding maximum leakage fluxes for each If
     leakage_pair(i) = max(abs(new_leakageData_pair(i,1:end)));
 end
 
-max_leakage = max(leakage); 
-max_leakage_pair = max(leakage_pair);
+max_leakage = max(leakage); % finding absolute maximum leakage flux
+max_leakage_pair = max(leakage_pair); % finding absolute maximum leakage flux for pair surfaces
 
-normalized_leakage = leakage./fpp3d'*100;
+normalized_leakage = leakage./fpp3d'*100; % normalization
 normalized_leakage_pair = leakage_pair./fpp3d'*100;
 
+%% Plotting Normalized Leakage
 figure
 scatter(If,normalized_leakage,'LineWidth',2)
 hold on
@@ -91,3 +94,9 @@ scatter(If,normalized_leakage_pair,'LineWidth',2)
 legend('Leakage','Leakage Pair')
 xlabel('$I_F$ (A)')
 ylabel('Leakage Flux (\% of Flux per Pole)')
+xlim([0 800])
+ylim([0 2])
+
+%% B_rad Data Plotting
+Brad_2D = xlsread("B_rad_2D_Fine_Mesh.csv");
+Brad_2D = xlsread("B_rad_2D_Fine_Mesh.csv");
