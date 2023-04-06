@@ -136,8 +136,9 @@ for i = 2:126
 end
 
 %% FFT of The Radial Flux Density Distribution
-
-Fs = 2e3;            % Sampling frequency                    
+FundamentalFrequency = 50; % Hz
+maxNoOfHarmonic = 20;
+Fs = FundamentalFrequency*2*maxNoOfHarmonic;            % Sampling frequency                    
 T = 1/Fs;             % Sampling period       
 L = length(B_2D);     % Length of signal
 t = (0:L-1)*T;        % Time vector
@@ -151,6 +152,7 @@ P1(2:end-1) = 2*P1(2:end-1);
                       % into a single-sided spectrum
 
 % plotting the fft
+figure
 f = Fs*(0:(L/2))/L;
 stem(f,P1) 
 title("Single-Sided Amplitude Spectrum of X(t)")
