@@ -14,7 +14,18 @@
 
 % This is the first version: published in 15.03.2023
 
-%------------------
+%--------------------Update Note--------------------------------------%
+% 3D and 2D model results are presented throughout the code. At first step,
+% the flux per poles are calculated at the surfaces defined in the airgap
+% in 3D model. In analogy, the flux per poles of the 2D model is calculated
+% at the lines in the airgap. Then, in order to obtain a meaningful result,
+% a line is defined in the 3D model at the middle of the airgap in the
+% middle of the axial length. Afterwards, flux per pole is also calculated
+% on this line. Results showed that they are same with the 2D results.
+% Then, FFT performed on the 3D and 2D radial B graphes to see the
+% harmonics, and their phases. Still working on...
+
+% This is the updated first version (v1.1): published in 06.04.2023
 %% Variables
 clear all
 clc
@@ -143,7 +154,7 @@ stem(f,P1)
 title("Single-Sided Amplitude Spectrum of X(t)")
 xlabel("f (Hz)")
 ylabel("|P1(f)|")
-
+xlim([0 ])
 % computing the phases
 z = fftshift(Y);
 ly = length(Y);

@@ -111,13 +111,15 @@ xlim([0 800])
 ylim([0 2])
 
 %% B_rad Data Plotting
-Brad_2D = xlsread("B_rad_2D_Fine_Mesh.csv");
-Brad_3D = xlsread("Brad_If500_CoarseMesh_3D.csv");
+Brad_2D = xlsread("B_rad_2D_Fine_Mesh.csv"); % reading the data
+Brad_3D = xlsread("Brad_If500_CoarseMesh_3D.csv"); % reading the data
+
 position2D = Brad_2D(1:end,3);
 B_2D = Brad_2D(1:end,4);
 position3D = Brad_3D(1:end,2);
 B_3D = Brad_3D(1:end,3);
 
+%integration with Riemann Sum
 int_2D = 0;
 int_3D = 0;
 for i = 2:497
@@ -135,7 +137,7 @@ end
 
 %% FFT of The Radial Flux Density Distribution
 
-Fs = 1000;            % Sampling frequency                    
+Fs = 2e3;            % Sampling frequency                    
 T = 1/Fs;             % Sampling period       
 L = length(B_2D);     % Length of signal
 t = (0:L-1)*T;        % Time vector
@@ -161,7 +163,8 @@ ly = length(Y);
 f = (0:ly-1)/ly*Fs;
 
 % plotting the phases
-stem(f,z.*180/pi)
+figure
+stem(f,z*180/pi)
 title("Double-Sided Amplitude Spectrum of x(t)")
 xlabel("Frequency (Hz)")
 ylabel("|y|")
