@@ -13,6 +13,19 @@
 % Roebel transposition validities.
 
 % This is the first version: published in 15.03.2023
+
+%--------------------Update Note--------------------------------------%
+% 3D and 2D model results are presented throughout the code. At first step,
+% the flux per poles are calculated at the surfaces defined in the airgap
+% in 3D model. In analogy, the flux per poles of the 2D model is calculated
+% at the lines in the airgap. Then, in order to obtain a meaningful result,
+% a line is defined in the 3D model at the middle of the airgap in the
+% middle of the axial length. Afterwards, flux per pole is also calculated
+% on this line. Results showed that they are same with the 2D results.
+% Then, FFT performed on the 3D and 2D radial B graphes to see the
+% harmonics, and their phases. Still working on...
+
+% This is the updated first version (v1.1): published in 06.04.2023
 %% Variables
 clear all
 clc
@@ -100,11 +113,55 @@ ylim([0 2])
 %% B_rad Data Plotting
 Brad_2D = xlsread("B_rad_2D_Fine_Mesh.csv");
 Brad_3D = xlsread("Brad_If500_CoarseMesh_3D.csv");
+position2D = Brad_2D(1:end,3);
+B_2D = Brad_2D(1:end,4);
+position3D = Brad_3D(1:end,2);
+B_3D = Brad_3D(1:end,3);
 
-figure
-plot(Brad_2D(1:end,3),Brad_2D(1:end,4))
-hold on
-plot(Brad_3D(1:end,2),-Brad_3D(1:end,3))
-xlim([0 Brad_2D(end,3)])
-grid on
-legend('2D','3D')
+int_2D = 0;
+int_3D = 0;
+for i = 2:497
+    dx = position2D(i)-position2D(i-1);
+    y1 = B_2D(i-1);
+    y2 = B_2D(i);
+    int_2D = 0.5*(y1+y2)*dx + int_2D;
+end
+for i = 2:126
+    dx = position3D(i)-position3D(i-1);
+    y1 = B_3D(i-1);
+    y2 = B_3D(i);
+    int_3D = 0.5*(y1+y2)*dx + int_3D;
+end
+
+%% FFT of The Radial Flux Density Distribution
+
+Fs = 1000;            % Sampling frequency                    
+T = 1/Fs;             % Sampling period       
+L = length(B_2D);     % Length of signal
+t = (0:L-1)*T;        % Time vector
+
+Y = fft(B_2D);        % fft of the signal
+
+P2 = abs(Y/L);
+P1 = P2(1:L/2+1);
+P1(2:end-1) = 2*P1(2:end-1);
+                      % computing the two-sided spectrum, and converting it
+                      % into a single-sided spectrum
+
+% plotting the fft
+f = Fs*(0:(L/2))/L;
+stem(f,P1) 
+title("Single-Sided Amplitude Spectrum of X(t)")
+xlabel("f (Hz)")
+ylabel("|P1(f)|")
+
+% computing the phases
+z = fftshift(Y);
+ly = length(Y);
+f = (0:ly-1)/ly*Fs;
+
+% plotting the phases
+stem(f,z.*180/pi)
+title("Double-Sided Amplitude Spectrum of x(t)")
+xlabel("Frequency (Hz)")
+ylabel("|y|")
