@@ -112,7 +112,7 @@ ylim([0 2])
 
 %% B_rad Data Plotting
 Brad_2D = xlsread("B_rad_2D_Fine_Mesh.csv"); % reading the data
-Brad_3D = xlsread("Brad_If500_CoarseMesh_3D.csv"); % reading the data
+Brad_3D = xlsread("Brad_If500_CoarseMeshPolePair.csv"); % reading the data
 
 position2D = Brad_2D(1:end,3);
 B_2D = Brad_2D(1:end,4);
@@ -128,14 +128,22 @@ for i = 2:497
     y2 = B_2D(i);
     int_2D = 0.5*(y1+y2)*dx + int_2D;
 end
-for i = 2:126
+for i = 2:497
     dx = position3D(i)-position3D(i-1);
     y1 = B_3D(i-1);
     y2 = B_3D(i);
     int_3D = 0.5*(y1+y2)*dx + int_3D;
 end
-plot(B_2D)
+
+plot(position2D,B_2D,'LineWidth',2)
 hold on
-plot(-B_3D)
+plot(position3D,-B_3D,'LineWidth',2)
+xlabel('Position')
+ylabel('B (Tesla)')
+grid on
+xlim([0 position3D(length(position3D))])
+legend('B$_{2D}$','B$_{3D}$')
+
+
 
 

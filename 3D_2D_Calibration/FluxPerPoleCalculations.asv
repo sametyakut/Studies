@@ -37,43 +37,6 @@ If = unique(data2d(:,1));
 
 fpp2d = zeros(15,1); % flux per pole array of 2D results
 fpp3d = zeros(15,1); % flux per pole array of 3D results
-%% FFT of The Radial Flux Density Distribution
-FundamentalFrequency = 50; % Hz
-maxNoOfHarmonic = 20;
-Fs = FundamentalFrequency*2*maxNoOfHarmonic;            % Sampling frequency                    
-T = 1/Fs;             % Sampling period 
-Flux_3D = data3d(7,2:end);  % Row number decides the If
-
-L = length(Flux_3D);     % Length of signal
-t = (0:L-1)*T;        % Time vector
-
-Y = fft(B_2D);        % fft of the signal
-
-P2 = abs(Y/L);
-P1 = P2(1:L/2+1);
-P1(2:end-1) = 2*P1(2:end-1);
-                      % computing the two-sided spectrum, and converting it
-                      % into a single-sided spectrum
-
-% plotting the fft
-figure
-f = Fs*(0:(L/2))/L;
-stem(f,P1) 
-title("Single-Sided Amplitude Spectrum of X(t)")
-xlabel("f (Hz)")
-ylabel("|P1(f)|")
-
-% computing the phases
-z = fftshift(Y);
-ly = length(Y);
-f = (0:ly-1)/ly*Fs;
-
-% plotting the phases
-figure
-stem(f,z*180/pi)
-title("Double-Sided Amplitude Spectrum of x(t)")
-xlabel("Frequency (Hz)")
-ylabel("|y|")
 %% Flux Per Pole Calculations
 NumSurfaces = 1280; % number of surfaces in quarter symmetry
 poles = 8; % number of poles in quarter symmetry
@@ -149,7 +112,7 @@ ylim([0 2])
 
 %% B_rad Data Plotting
 Brad_2D = xlsread("B_rad_2D_Fine_Mesh.csv"); % reading the data
-Brad_3D = xlsread("Brad_If500_CoarseMesh_3D.csv"); % reading the data
+Brad_3D = xlsread("Brad_If500_CoarseMeshPolePair.csv"); % reading the data
 
 position2D = Brad_2D(1:end,3);
 B_2D = Brad_2D(1:end,4);
@@ -165,10 +128,20 @@ for i = 2:497
     y2 = B_2D(i);
     int_2D = 0.5*(y1+y2)*dx + int_2D;
 end
-for i = 2:126
+for i = 2:497
     dx = position3D(i)-position3D(i-1);
     y1 = B_3D(i-1);
     y2 = B_3D(i);
     int_3D = 0.5*(y1+y2)*dx + int_3D;
 end
+
+plot(position2D,B_2D,'LineWidth',2)
+hold on
+plot(position3D,B_3D,'LineWidth',2)
+xlabel('Position')
+ylabel('B (Tesla)')
+grid on
+xlim([0 position3D(length(po))])
+
+
 
