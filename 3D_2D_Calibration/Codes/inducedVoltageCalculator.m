@@ -18,9 +18,9 @@ function [Va, Vb, Va_fund, Vb_fund] = inducedVoltageCalculator(k, time, kw, mag_
     end
     if isequal(value, 'Phase')
         figure1=figure('Position',[0 0 800 600]);
-        plot(time*180/pi,Va/1e3)
+        plot(time*180/pi,Va/1e3,'Color',[1 0 0],'LineWidth',1)
         hold on;
-        plot(time*180/pi,Va_fund/1e3)
+        plot(time*180/pi,Va_fund/1e3,'Color',[0 0 1],'LineWidth',1)
         xlim([0 360])
         %ylim([min(Va)/1e3-1 max(Va)/1e3+1])
         xlabel('Angle','FontName','Times New Roman');
