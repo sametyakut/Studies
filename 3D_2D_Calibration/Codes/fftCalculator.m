@@ -20,6 +20,36 @@ function [n_short_listed,mag_short_listed,angle_short_listed] = fftCalculator(k,
     Fs=1/theta;
     f = Fs*(0:(L/2))/L;
     n=2*pi*f;
+    figure1 = figure('Position', [0 0 900 500]);
+    subplot1 = subplot(2,1,1,'Parent',figure1);
+    hold(subplot1,'on');
+    stem(n,P1/max(P1),'Parent',subplot1,'Color',[0.5 0 0])
+    ylim([0 1])
+    xlim([0 21])
+    xlabel('Harmonic No')
+    ylabel('Normalized Magnitude')
+    % ylabel({' Fluxes within',' mechanical 1.12 degrees '},...
+    %     'FontName','Times New Roman');
+    box(subplot1,'on');
+    hold(subplot1,'off');
+    set(subplot1,'FontName','Times New Roman','FontSize',12);
+    grid on; 
+    grid minor;
+    
+    subplot2 = subplot(2,1,2,'Parent',figure1);
+    hold(subplot2,'on');
+    stem(n,P5*180/pi,'Parent',subplot2,'Color',[0 0 0.5])
+    ylim([-180 180])
+    xlabel('Harmonic No')
+    ylabel('Phase Angle (deg)')
+    % xlabel('Mechanical angle ^o','FontName','Times New Roman');
+    % ylabel('Flux per pole','FontName','Times New Roman');
+    xlim([0 21])
+    box(subplot2,'on');
+    hold(subplot2,'off');
+    set(subplot2,'FontName','Times New Roman','FontSize',12);
+    grid on; 
+    grid minor;
     n_short_listed=[];
     mag_short_listed=[];
     angle_short_listed=[];
