@@ -1,0 +1,12 @@
+﻿"SlotWidth"= 22mm
+"WedgeAngle"= 60deg
+"WedgeHeight"= 3mm
+"WedgeMidDistance"= 2.5mm
+"WedgeDistance"= 1mm
+"D1@Sketch1"= "SlotWidth"
+"D2@Sketch1"= "WedgeHeight"
+"D3@Sketch1"= "WedgeAngle"
+"D4@Sketch1"= "WedgeDistance"
+"D5@Sketch1"= "WedgeMidDistance"
+"AxialLength"= 925mm
+"D1@Boss-Extrude1"= "AxialLength"
