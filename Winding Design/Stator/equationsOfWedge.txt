@@ -2,7 +2,7 @@
 "WedgeAngle"= 60deg
 "WedgeHeight"= 3mm
 "WedgeMidDistance"= 2.5mm
-"WedgeDistance"= 1mm
+"WedgeDistance"= 3mm
 "D1@Sketch1"= "SlotWidth"
 "D2@Sketch1"= "WedgeHeight"
 "D3@Sketch1"= "WedgeAngle"

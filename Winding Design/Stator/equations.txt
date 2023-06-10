@@ -3,9 +3,9 @@
 "SlotWidth"= 22mm
 "SlotHeight"= 152mm
 "WedgeAngle"= 60deg
-"WedgeHeight"= 4mm
-"WedgeMidDistance"= 2.5mm
-"WedgeDistance"= 1mm
+"WedgeHeight"= 6mm
+"WedgeMidDistance"= 4.5mm
+"WedgeDistance"= 3mm
 "D1@Sketch1"= "Di"
 "D2@Sketch1"= "Do"
 "D3@Sketch1"= "SlotWidth"
