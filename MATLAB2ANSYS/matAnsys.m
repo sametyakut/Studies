@@ -1,7 +1,7 @@
 function matAnsys(recordedScriptName,modifiedScriptName,projectName,designName,Do,Dr,airgap,Ls,iter,dir)
     % Reading Recorded Script and Creating the Modified Script File
-    scrOrg = fopen('rmxprtExporting.vbs','r');
-    scrMod = fopen('script.vbs','w');
+    scrOrg = fopen(recordedScriptName,'r');
+    scrMod = fopen(modifiedScriptName,'w');
     
     if scrOrg < 0
         error('Cannot open original script')
