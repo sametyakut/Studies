@@ -13,13 +13,17 @@ Set oAnsoftApp = CreateObject("Ansoft.ElectronicsDesktop")
 Set oDesktop = oAnsoftApp.GetAppDesktop() 
 oDesktop.RestoreWindow 
  
+projectName = "trialModel_v1" 
+designName = "RMxprtDesign1" 
 Do = 6858.000000 
 Dr = 6161.600000 
 airgap = 18.000000 
 Ls = 925.000000 
 iter = 1 
-dir = D:/EUAS_Elektromanyetik_Draft/MATLAB2ANSYS/ 
-fname = designSheet_iter1 
+dir = "D:/EUAS_Elektromanyetik_Draft/MATLAB2ANSYS/" 
+fname = "designSheet_iter1" 
+'projectName = "" 
+'designName = "" 
 'Do = 6858 
 'Dr = 6161.6 
 'airgap = 18 
@@ -29,8 +33,8 @@ fname = designSheet_iter1
 'dir = "D:/EUAS_Elektromanyetik_Draft/MATLAB2ANSYS/" 
 'fname = "designSheet_iter0" 
  
-Set oProject = oDesktop.SetActiveProject("trialModel - Copy") 
-Set oDesign = oProject.SetActiveDesign("RMxprtDesign1") 
+Set oProject = oDesktop.SetActiveProject(projectName) 
+Set oDesign = oProject.SetActiveDesign(designName) 
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _ 
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:Do", "Value:=", cstr(Do) + "mm")))) 
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _ 
