@@ -8,7 +8,7 @@
 % connect MATLAB to ANSYS. This tool can be seen in MATLAB2ANSYS folder in
 % this repo.
 
-% List of file to check
+% List of files to check
 %1 nsga2.m ok
 %2 NonDominatedSorting.m ok
 %3 Dominates.m ok
@@ -18,6 +18,8 @@
 %7 Mutate.m    ok
 %8 Cost.m  ok
 %9 PlotCosts.m ok 
+%10 trialModel_v2.aedt ok
+%11 rmxprtExporting.vbs
 %%
 clc;
 clear;
