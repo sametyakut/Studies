@@ -1,5 +1,5 @@
 # Studies
-This repo is created for studies during the MSc. education.
+This repo is created for studies conducted during the MSc. education.
 
 ## 3D_2D_Calibration
 It is done for oberving any discrepancies between Maxwell 2D and 3D results. Doing so is enabling us to obtain more accurate 2D results. More specifically, this study is conducted for determining the effective length of the machine accurately by comparing it with the conventional Carter's factor method.
