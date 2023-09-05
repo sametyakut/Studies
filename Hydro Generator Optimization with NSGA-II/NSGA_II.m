@@ -219,6 +219,8 @@ for it = 1:MaxIt
     % loaded into the code to continue from there.
     outDataFileName = 'iterData_' + string(nPop) + 'pop_' + string(it) + '.mat';
     save(outDataFileName,'pop');
+    outCostFileName = 'iterData_' + string(nPop) + 'cost_' + string(it) + '.mat';
+    save(outCostFileName,'F1');
 end
 toc % Time of calculation
 
