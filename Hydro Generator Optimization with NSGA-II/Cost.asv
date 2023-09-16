@@ -46,7 +46,7 @@ else
 end
 
 copWidth = (x(5) - 2*0.2 - 2*3)/2 - 0.22;
-copHeight = ((x(6) + 4 - 5.5 - 5.5 - 2 - 0.2)/2 - 2*3 - 4*0.2)/25 - 0.22;
+copHeight = (x(6) + 4 - 5.5 - 5.5 - 2 - 0.2)/2-
 
 projectName = "trialModel_v2";
 designName = "RMxprtDesign1";
@@ -83,8 +83,6 @@ while true
         fprintf(scrMod, "h2 = %f \n", x(6));
         fprintf(scrMod, "Q = %f \n", Q);
         fprintf(scrMod, "lambda = %f \n", y);
-        fprintf(scrMod, "wireWidth = %f \n", copWidth);
-        fprintf(scrMod, "wireHeight = %f \n", copHeight);
         %fprintf(scrMod, "iter = %d \n", iter);
         fprintf(scrMod, 'dir = "%s" \n', dir);
         %fprintf(scrMod, 'fname = "designSheet_iter%d" \n',iter);

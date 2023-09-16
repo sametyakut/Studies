@@ -15,9 +15,28 @@ oDesktop.RestoreWindow
 
 'matlab
 
-
 Set oProject = oDesktop.SetActiveProject(projectName)
 Set oDesign = oProject.SetActiveDesign(designName)
+
+Q = CInt(Q)
+lambda = CInt(lambda)
+
+Set oEditor = oDesign.SetActiveEditor("Machine")
+oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Stator", Array("NAME:PropServers",  _
+  "Stator"), Array("NAME:ChangedProps", Array("NAME:Outer Diameter", "Value:=", "Do"), Array("NAME:Inner Diameter", "Value:=",  _
+  "Di"), Array("NAME:Length", "Value:=", "Ls"), Array("NAME:Steel Type", "Material:=",  _
+  "Cogent Power - M270-50A, B-H at 50Hz"), Array("NAME:Number of Slots", "Value:=",  _
+  cstr(Q)), Array("NAME:Slot Type", "SlotType:=", "6"))))
+
+oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Winding", Array("NAME:PropServers",  _
+  "Stator:Winding"), Array("NAME:ChangedProps", Array("NAME:Parallel Branches", "Value:=",  _
+  "1"), Array("NAME:Conductors per Slot", "Value:=", "2"), Array("NAME:Coil Pitch", "Value:=",  _
+  cstr(lambda)), Array("NAME:Number of Strands", "Value:=", "strands"), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _
+  "0mm", "WireSizeGauge:=", "STANDARDRECT", "WireSizeWireWidth:=", "wireWidth", "WireSizeWireThickness:=",  _
+  "wireHeight", "WireSizeMixedWireRectType:=", false, Array("NAME:WireSizeMixedDiameter"), Array("NAME:WireSizeMixedWidth"), Array("NAME:WireSizeMixedThickness"), Array("NAME:WireSizeMixedThicknessMixedFillet"), Array("NAME:WireSizeMixedThicknessMixedNumber")), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _
+  "0mm", "WireSizeGauge:=", "STANDARDRECT", "WireSizeWireWidth:=", "wireWidth", "WireSizeWireThickness:=",  _
+  "wireHeight", "WireSizeMixedWireRectType:=", false, Array("NAME:WireSizeMixedDiameter"), Array("NAME:WireSizeMixedWidth"), Array("NAME:WireSizeMixedThickness"), Array("NAME:WireSizeMixedThicknessMixedFillet"), Array("NAME:WireSizeMixedThicknessMixedNumber")))))
+
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:Do", "Value:=", cstr(outDia) + "mm"))))
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
@@ -26,6 +45,15 @@ oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Arra
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:airgap", "Value:=", cstr(airgap) + "mm"))))
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:Ls", "Value:=", cstr(Ls) + "mm"))))
+oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
+  "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:b2", "Value:=", cstr(b2) + "mm"))))
+oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
+  "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:h2", "Value:=", cstr(h2) + "mm"))))
+oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
+  "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:wireWidth", "Value:=", cstr(wireWidth) + "mm"))))
+oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
+  "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:wireHeight", "Value:=", cstr(wireHeight) + "mm"))))
+
 oProject.Save
 oDesign.Analyze "Setup1"
 Set oModule = oDesign.GetModule("ReportSetup")
