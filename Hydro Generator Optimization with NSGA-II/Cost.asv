@@ -56,21 +56,15 @@ strandInsulationThickness = 0.2; % mm
 wedgeHeightInModel = 4; % mm
 slotSpacerHeight = 5.5; % mm
 springThickness = 1; % mm
-actualWedgeHeight = 5.5; % mm
-numOfVerticalStrands = 25; % in total 48 strands are present
+actualWedgeHeigh
+copperWidth = (x(5) - 2*0.2 - 2*3)/2 - 0.22;
+copperHeight = ((x(6) + 4 - 5.5 - 5.5 - 2 - 0.2)/2 - 2*3 - 4*0.2)/25 - 0.22;
 
-% calculating strand dimensions
-copperWidth = (x(5) - 2*carbonPaperThickness - 2*mainInsulation)/numOfHorizontalStrands - strandInsulationThickness;
-copperHeight = ((x(6) + wedgeHeightInModel - slotSpacerHeight - actualWedgeHeight - 2*springThickness - carbonPaperThickness) ...
-    /2 - 2*mainInsulation)/numOfVerticalStrands - strandInsulationThickness;
+projectName = "trialModel_v2";
+designName = "RMxprtDesign1";
+scrOrg = fopen('rmxprtExporting.vbs','r');
+scrMod = fopen('script.vbs','w');
 
-% connecting ANSYS
-projectName = "trialModel_v2"; % ANSYS EM Project Name
-designName = "RMxprtDesign1"; % Active design name
-scrOrg = fopen('rmxprtExporting.vbs','r'); % original recorded script
-scrMod = fopen('script.vbs','w'); % modified script
-
-% if script is not opened, return error
 if scrOrg < 0
     error('Cannot open original script')
 end
@@ -103,7 +97,9 @@ while true
         fprintf(scrMod, "lambda = %f \n", y);
         fprintf(scrMod, "wireWidth = %f \n", copperWidth);
         fprintf(scrMod, "wireHeight = %f \n", copperHeight);
+        %fprintf(scrMod, "iter = %d \n", iter);
         fprintf(scrMod, 'dir = "%s" \n', dir);
+        %fprintf(scrMod, 'fname = "designSheet_iter%d" \n',iter);
 
     else % copying the rest of the code from the original script
         fprintf(scrMod, "%s \n", str);
@@ -114,39 +110,40 @@ end
 % Run FEA Model
 system('script.vbs');
 
-% short circuit ratio calculation
 scrData = xlsread('SCR.csv');
 Xd = scrData(end,2);
 Xd_pu = Xd/(13800/(sqrt(3)*1860)); % pu conversion
 SCR = 1/Xd_pu;
 
-% material mass calculation
 mass = xlsread('Mass.csv');
 copperMass = mass(end,2);
-steelMass = mass(end,3)/0.7; % assuming 30% wastage
+steelMass = mass(end,3)/0.7; % %30 fire varsayıyoruz
 totalMaterialCost = copperMass*copperPrice + steelMass*steelPrice;
-initCost = totalMaterialCost*2.5; % including labor cost, for simplicity multiplied with 2.5
+initCost = totalMaterialCost*2.5; % işçiliği de dahil edince
 
-% This is not used for now
-% loss = xlsread('Losses.csv');
-% armatureCopperLoss = loss(end,2);
-% fieldCopperLoss = loss(end,3);
-% coreLoss = loss(end,4);
-% mechanicalLosses = 308; % kW
-% totalLoss = armatureCopperLoss + fieldCopperLoss + coreLoss + mechanicalLosses;
-% totalLossHour = totalLoss/1e3*3600; % MWh conversion
-% totalLossCost = totalLossHour*elecPrice;
+loss = xlsread('Losses.csv');
+armatureCopperLoss = loss(end,2);
+fieldCopperLoss = loss(end,3);
+coreLoss = loss(end,4);
+mechanicalLosses = 308; % kW
+totalLoss = armatureCopperLoss + fieldCopperLoss + coreLoss + mechanicalLosses;
+totalLossHour = totalLoss/1e3*3600; % MWh conversion
+totalLossCost = totalLossHour*elecPrice;
 
-% totalIncome = 40/3*3600*elecPrice; % 40 MW of generation with 8 hours of working per day
+totalIncome = 40/3*3600*elecPrice; % 40 MW of generation with 8 hours of working per day
 
-% Efficiency reading for cost
+%f1 = (initCost + totalLossCost)/totalIncome;
+
+
 eff = xlsread('Efficiency.csv');
 efficiency = eff(end,2);
 
-% assigning cost with penalty functions
 if SCR < 0.8
     f1 = initCost + 1e6*(1/SCR)^4;
     f2 = 1/efficiency + 1e6*(1/SCR)^4;
+%elseif SCR > 1.6
+%    f1 = 1e6*SCR;
+%    f2 = 1e6*SCR;
 else
     f1 = initCost;
     f2 = 1/efficiency;
