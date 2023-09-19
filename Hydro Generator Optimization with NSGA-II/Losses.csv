@@ -1,2 +1,2 @@
-"Do [mm]","ArmatureCopperLossParameter [mW]","FieldCopperLossParameter [mW]","IronCoreLossParameter [mW]"
-7000,38570400,109561000,261823000
+"Do [meter]","ArmatureCopperLossParameter [kW]","FieldCopperLossParameter [kW]","IronCoreLossParameter [kW]"
+7,103.349,80.8643,142.699

@@ -61,9 +61,9 @@ nObj =2; % Number of Objective Functions armatür mass ve current density
 
 %% NSGA II Parameters
 
-MaxIt = 2;      % Maximum Number of Iterations % algoritma 100 kere çalışacak
+MaxIt = 20;      % Maximum Number of Iterations % algoritma 100 kere çalışacak
 
-nPop = 10;        % Population Size % İlk populasyonun sayısı 100 olarak belirlenmiş
+nPop = 150;        % Population Size % İlk populasyonun sayısı 100 olarak belirlenmiş
 
 pCrossover = 0.7;                         % Crossover Percentage % Populasyonun %70, crossover olacak 
 nCrossover = 2*round(pCrossover*nPop/2);  % Number of Partners (Offsprings)
