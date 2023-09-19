@@ -5,7 +5,7 @@ function PlotCosts(pop)
     plot(Costs(1, :), Costs(2, :).^-1, 'r*', 'MarkerSize', 8);
     xlabel('1^{st} Objective');
     ylabel('2^{nd} Objective');
-    title('Non-dominated Solutions (F_{1})');
+    title('Non-dominated Solutions (F$_{1}$)');
     grid on;
 
 end
