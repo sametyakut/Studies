@@ -181,26 +181,52 @@ for it = 1:MaxIt
     F1 = pop(F{1}); % storing frontier 1's
     
     % Show Iteration Information
-    disp(['Iteration ' num2str(it) ': Number of F1 Members = ' num2str(numel(F1))]); % printing iteration number
+    disp(['Iteration ' num2str(it) ': Number of F1 Members = ' num2str(numel(F1))]); % printing iteration numb
     
     % Plot F1 Costs
     figure(1);
-    PlotCosts(F1); 
-    xlabel('Initial Cost [USD]'); 
-    ylabel('1/Efficiency'); 
-    title('Iteration No:',num2str(it)) 
-    pause(0.01);  
-    
-    % saving the population and frontier for preventing from loss of data
-    outDataFileName = 'iterData_' + string(nPop) + 'pop_' + string(it) + '.mat';
-    save(outDataFileName,'pop');
+    PlotCosts(F1); % Burda bir fonksiyon çağırılmış. 
+    xlabel('Initial Cost [USD]'); % Bende burası Armature mass olacak
+    ylabel('1/Efficiency'); % Burası Saddle Current Density Homogeneity
+    title('Iteration No:',num2str(it)) % Tepede iterasyon numarası yazacak 
+    pause(0.01); % % Her 0.01 saniye de bir plot ettirmeyi durdur diyoruz. 
 
-    outCostFileName = 'iterData_' + string(nPop) + 'cost_' + string(it) + '.mat';
-    save(outCostFileName,'F1');
+
+     pop_cost=[pop.Cost];
+      conv_best1(it)=min(pop_cost(1,:));
+      conv_worst1(it)=max(pop_cost(1,:));
+
+      conv_best2(it)=min(pop_cost(2,:));
+      conv_worst2(it)=max(pop_cost(2,:));
+
+      conv_1(it,:)=pop_cost(1,:);
+      conv_2(it,:)=pop_cost(2,:);
+    
+     outDataFileName = 'iterData_' + string(nPop) + 'pop_' + string(it) + '.mat';
+     save(outDataFileName,'pop');
+
+     outCostFileName = 'iterData_' + string(nPop) + 'cost_' + string(it) + '.mat';
+     save(outCostFileName,'F1');
 end
 toc % Time of calculation
+
+% figure;
+% plot((1:it),conv_1,'r*', 'MarkerSize', 8);
+% xlim([0 it+1]);
+% ylim([0 5]);
+% xlabel('Iteration');
+% ylabel('Rail Length (m)');
+% grid on;
+% 
+% figure;
+% plot((1:it),conv_2,'r*', 'MarkerSize', 8);
+% xlim([0 it+1]);
+% ylim([0 1]);
+% xlabel('Iteration');
+% ylabel('$I_{exit}/I_{peak}$');
+% grid on;
+
 
 
 
 %% Results
-% left blank for further calculations from the obtained results
