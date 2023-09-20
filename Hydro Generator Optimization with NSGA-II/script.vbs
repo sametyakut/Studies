@@ -16,15 +16,15 @@ oDesktop.RestoreWindow
 projectName = "trialModel_v2" 
 designName = "RMxprtDesign1" 
 outDia = 6858.000000 
-Dr = 6143.400000 
-airgap = 14.400000 
-Ls = 888.700000 
-b2 = 23.578009 
-h2 = 139.007517 
-Q = 306.000000 
-lambda = 9.000000 
-wireWidth = 8.389004 
-wireHeight = 2.156150 
+Dr = 6136.600000 
+airgap = 17.800000 
+Ls = 1645.000000 
+b2 = 12.800000 
+h2 = 129.200000 
+Q = 234.000000 
+lambda = 7.000000 
+wireWidth = 3.000000 
+wireHeight = 1.960000 
 dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/" 
  
 Set oProject = oDesktop.SetActiveProject(projectName) 

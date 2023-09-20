@@ -2,9 +2,9 @@ function PlotCosts(pop)
 
     Costs = [pop.Cost];
     
-    plot(Costs(1, :), Costs(2, :).^-1, 'r*', 'MarkerSize', 8);
-    xlabel('1^{st} Objective');
-    ylabel('2^{nd} Objective');
+    plot(Costs(1, :), Costs(2, :).^-1, '*', 'MarkerSize', 8);
+    xlabel('Initial Cost (USD)');
+    ylabel('Efficiency (%)');
     title('Non-dominated Solutions (F$_{1}$)');
     grid on;
 

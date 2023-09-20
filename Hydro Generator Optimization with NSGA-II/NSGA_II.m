@@ -65,11 +65,11 @@ nObj =2; % Number of Objective Functions
 
 %% NSGA II Parameters
 
-MaxIt = 40;      % Maximum Number of Iterations 
+MaxIt = 150;      % Maximum Number of Iterations 
 
 nPop = 150;        % Population Size 
 
-pCrossover = 0.7;                         % Crossover Percentage  
+pCrossover = 0.5;                         % Crossover Percentage  
 %nCrossover = 2*round(pCrossover*nPop/2);  % Number of Partners (Offsprings)
 nCrossover = 70;
 
