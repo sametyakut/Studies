@@ -26,8 +26,8 @@ nVar = 7;             % Number of Decision Variables
 
 VarSize = [1 nVar];   % Size of Decision Variables Matrix 
 
-Do_max = 6.858e3;   % mm
-Do_min = 6.858e3;   % mm
+Do_max = 7e3;   % mm
+Do_min = 7e3;   % mm
 
 k_min = 0.7;
 k_max = (Do_min - 2*152-200)/Do_min;
@@ -65,15 +65,14 @@ nObj =2; % Number of Objective Functions
 
 %% NSGA II Parameters
 
-MaxIt = 40;      % Maximum Number of Iterations 
+MaxIt = 20;      % Maximum Number of Iterations 
 
 nPop = 150;        % Population Size 
 
 pCrossover = 0.7;                         % Crossover Percentage  
-%nCrossover = 2*round(pCrossover*nPop/2);  % Number of Partners (Offsprings)
-nCrossover = 70;
+nCrossover = 2*round(pCrossover*nPop/2);  % Number of Partners (Offsprings)
 
-pMutation = 0.02;                          % Mutation Percentage  
+pMutation = 0.1;                          % Mutation Percentage  
 nMutation = round(pMutation*nPop);        % Number of Mutants
 mu = 0.05;                    % Mutation Rate
 

@@ -416,18 +416,18 @@ ANSYS, Inc. provides no warranty for this data.'
 				$end 'DatasetDefinitions'
 			$end 'DesignDatasets'
 			$begin 'Properties'
-				VariableProp('Do', 'UD', '', '7000mm')
-				VariableProp('Dr', 'UD', '', '6306.992778mm')
-				VariableProp('airgap', 'UD', '', '14.1mm')
+				VariableProp('Do', 'UD', '', '6858mm')
+				VariableProp('Dr', 'UD', '', '6143.4mm')
+				VariableProp('airgap', 'UD', '', '14.4mm')
 				VariableProp('Di', 'UD', '', 'Dr+2*airgap')
-				VariableProp('Ls', 'UD', '', '1120.1mm')
+				VariableProp('Ls', 'UD', '', '888.7mm')
 				VariableProp('h0', 'UD', '', '1mm')
 				VariableProp('h1', 'UD', '', '3mm')
-				VariableProp('h2', 'UD', '', '92mm')
+				VariableProp('h2', 'UD', '', '139.007517mm')
 				VariableProp('b1', 'UD', '', 'b2+4mm')
-				VariableProp('b2', 'UD', '', '33.8mm')
-				VariableProp('wireWidth', 'UD', '', '13.48mm')
-				VariableProp('wireHeight', 'UD', '', '1.164mm')
+				VariableProp('b2', 'UD', '', '23.578009mm')
+				VariableProp('wireWidth', 'UD', '', '8.389004mm')
+				VariableProp('wireHeight', 'UD', '', '2.15615mm')
 				VariableProp('Ds', 'UD', '', 'Dr-1161.6mm')
 				VariableProp('Lr', 'UD', '', 'Ls')
 				VariableProp('poleBodyWidth', 'UD', '', '343mm')
@@ -1048,7 +1048,7 @@ ANSYS, Inc. provides no warranty for this data.'
 				ParentID=-1
 				DataName='Stator'
 				SkewWidth='0'
-				NumberOfSlots=276
+				NumberOfSlots=306
 				LaminationSectors=0
 				PressBoardThickness='0mm'
 				OuterDiameter='Do'
@@ -1133,7 +1133,7 @@ ANSYS, Inc. provides no warranty for this data.'
 				HalfTurnLength='0mm'
 				ParallelBranches=1
 				ConductorsPerSlot='2'
-				CoilPitch=8
+				CoilPitch=9
 				EndAdjustment='0mm'
 				BaseInnerRadius='0mm'
 				TipInnerDiameter='0mm'
@@ -1259,27 +1259,27 @@ ANSYS, Inc. provides no warranty for this data.'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Do'
-								Column='7000mm'
+								Column='6858mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Dr'
-								Column='6271.6mm;6306.992778mm'
+								Column='6143.4mm;6148.4mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='airgap'
-								Column='14.1mm;14.2mm'
+								Column='11.9mm;14.4mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Di'
-								Column='6300mm;6335.192778mm'
+								Column='6172.2mm;6172.2mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Ls'
-								Column='1100.801413mm;1120.1mm'
+								Column='622.2mm;888.7mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
@@ -1294,37 +1294,37 @@ ANSYS, Inc. provides no warranty for this data.'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='h2'
-								Column='92mm'
+								Column='120.3mm;139.007517mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='b1'
-								Column='37.8mm'
+								Column='19.4mm;27.578009mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='b2'
-								Column='33.8mm'
+								Column='15.4mm;23.578009mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='wireWidth'
-								Column='13.48mm'
+								Column='4.3mm;8.389004mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='wireHeight'
-								Column='1.164mm'
+								Column='1.782mm;2.15615mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Ds'
-								Column='5110mm;5145.392778mm'
+								Column='4981.8mm;4986.8mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Lr'
-								Column='1100.801413mm;1120.1mm'
+								Column='622.2mm;888.7mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
@@ -1397,11 +1397,11 @@ ANSYS, Inc. provides no warranty for this data.'
 				$end 'Solution'
 			$end 'SimSetup'
 			$begin 'Version ID Map'
-				V=41571
+				V=90073
 				$begin 'Setup'
 					N='Setup1'
-					V=41571
-					Soln(N='Performance', V=41571)
+					V=90073
+					Soln(N='Performance', V=90073)
 				$end 'Setup'
 			$end 'Version ID Map'
 			$begin 'ID Map'
@@ -1473,7 +1473,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=34
-									VersionID=380586
+									VersionID=532290
 									Name='EfficiencyParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -1678,7 +1678,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=36
-									VersionID=380587
+									VersionID=532291
 									Name='ArmatureCopperWeightParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -1879,7 +1879,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=37
-									VersionID=380588
+									VersionID=532292
 									Name='ArmatureCoreSteelWeightParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2084,7 +2084,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=39
-									VersionID=380589
+									VersionID=532293
 									Name='DAxisReactanceX1PlusXadParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2289,7 +2289,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=41
-									VersionID=380590
+									VersionID=532294
 									Name='ArmatureCopperLossParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2490,7 +2490,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=42
-									VersionID=380591
+									VersionID=532295
 									Name='FieldCopperLossParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2691,7 +2691,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=43
-									VersionID=380592
+									VersionID=532296
 									Name='IronCoreLossParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2884,7 +2884,7 @@ ANSYS, Inc. provides no warranty for this data.'
 						NextUniqueID=45
 						MoveBackwards=false
 						$begin 'NextVersID'
-							NextUniqueID=380593
+							NextUniqueID=532297
 							MoveBackwards=false
 						$end 'NextVersID'
 					$end 'ReportManager'
