@@ -11,20 +11,20 @@ Dim oModule
  
 Set oAnsoftApp = CreateObject("Ansoft.ElectronicsDesktop") 
 Set oDesktop = oAnsoftApp.GetAppDesktop() 
-oDesktop.RestoreWindow 
+'oDesktop.RestoreWindow 
  
 projectName = "trialModel_v2" 
 designName = "RMxprtDesign1" 
 outDia = 6858.000000 
-Dr = 6136.600000 
-airgap = 17.800000 
-Ls = 1645.000000 
-b2 = 12.800000 
-h2 = 129.200000 
-Q = 234.000000 
-lambda = 7.000000 
-wireWidth = 3.000000 
-wireHeight = 1.960000 
+Dr = 6329.049119 
+airgap = 12.475441 
+Ls = 995.682714 
+b2 = 24.748235 
+h2 = 107.300000 
+Q = 273.000000 
+lambda = 8.000000 
+wireWidth = 8.974117 
+wireHeight = 1.522000 
 dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/" 
  
 Set oProject = oDesktop.SetActiveProject(projectName) 

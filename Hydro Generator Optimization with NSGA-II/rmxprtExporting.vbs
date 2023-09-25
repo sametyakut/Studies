@@ -11,7 +11,7 @@ Dim oModule
 
 Set oAnsoftApp = CreateObject("Ansoft.ElectronicsDesktop")
 Set oDesktop = oAnsoftApp.GetAppDesktop()
-oDesktop.RestoreWindow
+'oDesktop.RestoreWindow
 
 'matlab
 
