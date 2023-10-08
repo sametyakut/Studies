@@ -26,8 +26,8 @@ nVar = 7;             % Number of Decision Variables
 
 VarSize = [1 nVar];   % Size of Decision Variables Matrix 
 
-Do_max = 6.858e3;   % mm
-Do_min = 6.858e3;   % mm
+Do_max = 7.5e3;   % mm
+Do_min = 7.5e3;   % mm
 
 k_min = 0.7;
 k_max = (Do_min - 2*152-200)/Do_min;
