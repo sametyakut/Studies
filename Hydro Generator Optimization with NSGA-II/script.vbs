@@ -15,16 +15,16 @@ Set oDesktop = oAnsoftApp.GetAppDesktop()
  
 projectName = "trialModel_v2" 
 designName = "RMxprtDesign1" 
-outDia = 8000.000000 
-Dr = 7438.448955 
-airgap = 13.600000 
-Ls = 719.900000 
-b2 = 25.190765 
-h2 = 93.800000 
-Q = 303.000000 
+outDia = 6000.000000 
+Dr = 5472.400000 
+airgap = 11.800000 
+Ls = 866.400000 
+b2 = 25.000000 
+h2 = 106.900000 
+Q = 306.000000 
 lambda = 9.000000 
-wireWidth = 9.195382 
-wireHeight = 1.252000 
+wireWidth = 9.100000 
+wireHeight = 1.514000 
 dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/" 
  
 Set oProject = oDesktop.SetActiveProject(projectName) 

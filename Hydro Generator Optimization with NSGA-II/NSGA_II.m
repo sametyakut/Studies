@@ -26,8 +26,8 @@ nVar = 7;             % Number of Decision Variables
 
 VarSize = [1 nVar];   % Size of Decision Variables Matrix 
 
-Do_max = 7.5e3;   % mm
-Do_min = 7.5e3;   % mm
+Do_max = 6e3;   % mm
+Do_min = 6e3;   % mm
 
 k_min = 0.7;
 k_max = (Do_min - 2*152-200)/Do_min;
@@ -87,7 +87,7 @@ empty_ind.Rank = [];     % rank
 empty_ind.DominatedCount = []; % how many times an individual is dominated
 empty_ind.DominationSet = []; % individuals dominated
 empty_ind.CrowdingDistance = []; % distance between individuals
-
+%%
 pop = repmat(empty_ind, nPop, 1); % empty individual
 count = 0;
 i = 1;

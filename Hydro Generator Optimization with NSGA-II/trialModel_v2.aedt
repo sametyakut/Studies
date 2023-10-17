@@ -416,18 +416,18 @@ ANSYS, Inc. provides no warranty for this data.'
 				$end 'DatasetDefinitions'
 			$end 'DesignDatasets'
 			$begin 'Properties'
-				VariableProp('Do', 'UD', '', '8000mm')
-				VariableProp('Dr', 'UD', '', '7438.448955mm')
+				VariableProp('Do', 'UD', '', '6000mm')
+				VariableProp('Dr', 'UD', '', '(6000*0.9-2*13.6) mm')
 				VariableProp('airgap', 'UD', '', '13.6mm')
 				VariableProp('Di', 'UD', '', 'Dr+2*airgap')
-				VariableProp('Ls', 'UD', '', '719.9mm')
+				VariableProp('Ls', 'UD', '', '1017.7mm')
 				VariableProp('h0', 'UD', '', '1mm')
 				VariableProp('h1', 'UD', '', '3mm')
-				VariableProp('h2', 'UD', '', '93.8mm')
+				VariableProp('h2', 'UD', '', '106.9mm')
 				VariableProp('b1', 'UD', '', 'b2+4mm')
-				VariableProp('b2', 'UD', '', '25.190765mm')
-				VariableProp('wireWidth', 'UD', '', '9.195382mm')
-				VariableProp('wireHeight', 'UD', '', '1.252mm')
+				VariableProp('b2', 'UD', '', '25mm')
+				VariableProp('wireWidth', 'UD', '', '9.08mm')
+				VariableProp('wireHeight', 'UD', '', '1.494mm')
 				VariableProp('Ds', 'UD', '', 'Dr-1161.6mm')
 				VariableProp('Lr', 'UD', '', 'Ls')
 				VariableProp('poleBodyWidth', 'UD', '', '343mm')
@@ -1244,13 +1244,13 @@ ANSYS, Inc. provides no warranty for this data.'
 							MoveBackwards=false
 							IDMap()
 						$end 'QuantityIDs'
-						SimValue('EfficiencyParameter', 1, 90, false, SimValueID=360882, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
-						SimValue('ArmatureCopperWeightParameter', 1, 158, false, SimValueID=360883, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
-						SimValue('ArmatureCoreSteelWeightParameter', 1, 158, false, SimValueID=360884, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
-						SimValue('DAxisReactanceX1PlusXadParameter', 1, 8, false, SimValueID=360885, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
-						SimValue('ArmatureCopperLossParameter', 1, 58, false, SimValueID=360886, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
-						SimValue('FieldCopperLossParameter', 1, 58, false, SimValueID=360887, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
-						SimValue('IronCoreLossParameter', 1, 58, false, SimValueID=360888, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+						SimValue('EfficiencyParameter', 1, 90, false, SimValueID=721221, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+						SimValue('ArmatureCopperWeightParameter', 1, 158, false, SimValueID=721222, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+						SimValue('ArmatureCoreSteelWeightParameter', 1, 158, false, SimValueID=721223, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+						SimValue('DAxisReactanceX1PlusXadParameter', 1, 8, false, SimValueID=721224, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+						SimValue('ArmatureCopperLossParameter', 1, 58, false, SimValueID=721225, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+						SimValue('FieldCopperLossParameter', 1, 58, false, SimValueID=721226, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
+						SimValue('IronCoreLossParameter', 1, 58, false, SimValueID=721227, 53028, 0, 2, 0, false, false, -1, 1, 0, 1, 1, '', 0, 0)
 						$begin 'Sweeps'
 							$begin 'Sweep'
 								Variable='Index'
@@ -1259,27 +1259,27 @@ ANSYS, Inc. provides no warranty for this data.'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Do'
-								Column='8000mm'
+								Column='6000mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Dr'
-								Column='7438.448955mm;7471.8mm'
+								Column='5372.8mm;5472.4mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='airgap'
-								Column='12.1mm;13.6mm'
+								Column='11.8mm;13.6mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Di'
-								Column='7465.648955mm;7496mm'
+								Column='5400mm;5496mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Ls'
-								Column='659.3mm;719.9mm'
+								Column='866.4mm;1017.7mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
@@ -1294,37 +1294,37 @@ ANSYS, Inc. provides no warranty for this data.'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='h2'
-								Column='93.8mm'
+								Column='106.9mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='b1'
-								Column='29.1mm;29.190765mm'
+								Column='29mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='b2'
-								Column='25.1mm;25.190765mm'
+								Column='25mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='wireWidth'
-								Column='9.15mm;9.195382mm'
+								Column='9.08mm;9.1mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='wireHeight'
-								Column='1.252mm'
+								Column='1.494mm;1.514mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Ds'
-								Column='6276.848955mm;6310.2mm'
+								Column='4211.2mm;4310.8mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
 								Variable='Lr'
-								Column='659.3mm;719.9mm'
+								Column='866.4mm;1017.7mm'
 								Units='mm'
 							$end 'Sweep'
 							$begin 'Sweep'
@@ -1397,11 +1397,11 @@ ANSYS, Inc. provides no warranty for this data.'
 				$end 'Solution'
 			$end 'SimSetup'
 			$begin 'Version ID Map'
-				V=606947
+				V=883381
 				$begin 'Setup'
 					N='Setup1'
-					V=606947
-					Soln(N='Performance', V=606947)
+					V=883381
+					Soln(N='Performance', V=883381)
 				$end 'Setup'
 			$end 'Version ID Map'
 			$begin 'ID Map'
@@ -1424,7 +1424,7 @@ ANSYS, Inc. provides no warranty for this data.'
 		Notes=$begin_cdata$ $end_cdata$
 		$begin 'AnimationSetups'
 		$end 'AnimationSetups'
-		CacheHeaderFile='HDR78921046416952143464.tmp'
+		CacheHeaderFile='HDR73621886816970100904.tmp'
 	$end 'RMxprtDesign'
 	$begin 'DataInstances'
 		DesignEditor='TopLevel'
@@ -1473,7 +1473,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=34
-									VersionID=2156199
+									VersionID=3025214
 									Name='EfficiencyParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -1678,7 +1678,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=36
-									VersionID=2156200
+									VersionID=3025215
 									Name='ArmatureCopperWeightParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -1879,7 +1879,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=37
-									VersionID=2156201
+									VersionID=3025216
 									Name='ArmatureCoreSteelWeightParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2084,7 +2084,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=39
-									VersionID=2156202
+									VersionID=3025217
 									Name='DAxisReactanceX1PlusXadParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2289,7 +2289,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=41
-									VersionID=2156203
+									VersionID=3025218
 									Name='ArmatureCopperLossParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2490,7 +2490,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=42
-									VersionID=2156204
+									VersionID=3025219
 									Name='FieldCopperLossParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2691,7 +2691,7 @@ ANSYS, Inc. provides no warranty for this data.'
 										$end 'DESIGN_SOLUTION_SIM_VALUE_CONTEXT'
 									$end 'DesignSolnDefn'
 									ID=43
-									VersionID=2156205
+									VersionID=3025220
 									Name='IronCoreLossParameter'
 									TieNameToExpr=true
 									$begin 'Components'
@@ -2884,7 +2884,7 @@ ANSYS, Inc. provides no warranty for this data.'
 						NextUniqueID=45
 						MoveBackwards=false
 						$begin 'NextVersID'
-							NextUniqueID=2156206
+							NextUniqueID=3025221
 							MoveBackwards=false
 						$end 'NextVersID'
 					$end 'ReportManager'
@@ -2909,7 +2909,7 @@ ANSYS, Inc. provides no warranty for this data.'
 									$end 'Graph2D'
 								$end 'Graph2DsV2'
 								$begin 'PlotDisplayDataManager'
-									NextUniqueID=57
+									NextUniqueID=73
 									MoveBackwards=false
 									$begin 'PlotHeaderDataSource'
 										CompanyName=''
@@ -3194,6 +3194,58 @@ ANSYS, Inc. provides no warranty for this data.'
 															ModifyPosition=false
 														$end 'OverlayLayoutAttribute'
 													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=58
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=62
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=66
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=70
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
 												$end 'MainMapItem'
 											$end 'PlotAttributeStoreMap'
 											PlotType=25
@@ -3251,7 +3303,7 @@ ANSYS, Inc. provides no warranty for this data.'
 									$end 'Graph2D'
 								$end 'Graph2DsV2'
 								$begin 'PlotDisplayDataManager'
-									NextUniqueID=75
+									NextUniqueID=100
 									MoveBackwards=false
 									$begin 'PlotHeaderDataSource'
 										CompanyName=''
@@ -3461,7 +3513,7 @@ ANSYS, Inc. provides no warranty for this data.'
 									$end 'DocDefaultAttributes'
 									$begin 'PerViewPlotAttributeStoreMap'
 										$begin 'MapItem'
-											ItemID=-1
+											ItemID=97
 											$begin 'PlotAttributeStoreMap'
 												$begin 'MainMapItem'
 													$begin 'SubMapItem'
@@ -3646,6 +3698,71 @@ ANSYS, Inc. provides no warranty for this data.'
 															ModifyPosition=false
 														$end 'OverlayLayoutAttribute'
 													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=76
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=81
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=86
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=91
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=96
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
 												$end 'MainMapItem'
 											$end 'PlotAttributeStoreMap'
 											PlotType=25
@@ -3699,7 +3816,7 @@ ANSYS, Inc. provides no warranty for this data.'
 									$end 'Graph2D'
 								$end 'Graph2DsV2'
 								$begin 'PlotDisplayDataManager'
-									NextUniqueID=59
+									NextUniqueID=75
 									MoveBackwards=false
 									$begin 'PlotHeaderDataSource'
 										CompanyName=''
@@ -4072,6 +4189,58 @@ ANSYS, Inc. provides no warranty for this data.'
 															ModifyPosition=false
 														$end 'OverlayLayoutAttribute'
 													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=60
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=64
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=68
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=72
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
 												$end 'MainMapItem'
 											$end 'PlotAttributeStoreMap'
 											PlotType=25
@@ -4134,7 +4303,7 @@ ANSYS, Inc. provides no warranty for this data.'
 									$end 'Graph2D'
 								$end 'Graph2DsV2'
 								$begin 'PlotDisplayDataManager'
-									NextUniqueID=91
+									NextUniqueID=115
 									MoveBackwards=false
 									$begin 'PlotHeaderDataSource'
 										CompanyName=''
@@ -4589,6 +4758,58 @@ ANSYS, Inc. provides no warranty for this data.'
 															ModifyPosition=false
 														$end 'OverlayLayoutAttribute'
 													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=92
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=98
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=104
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
+													$begin 'SubMapItem'
+														DataSourceID=110
+														$begin 'OverlayLayoutAttribute'
+															$begin 'BoundingRect'
+																Top=225
+																Left=1138
+																Bottom=9775
+																Right=9775
+															$end 'BoundingRect'
+															ModifySize=false
+															ModifyPosition=false
+														$end 'OverlayLayoutAttribute'
+													$end 'SubMapItem'
 												$end 'MainMapItem'
 											$end 'PlotAttributeStoreMap'
 											PlotType=25
@@ -4636,6 +4857,22 @@ ANSYS, Inc. provides no warranty for this data.'
 							ReportID=38
 							$begin 'WindowInfoList'
 								$begin 'Report2D'
+									$begin 'ViewInfo'
+										$begin 'WrapperView'
+											ID(97)
+										$end 'WrapperView'
+										$begin 'WrapperDoc'
+											HiddenDrawings()
+											$begin 'DispType'
+												PlotType=25
+												$begin 'CurveMed'
+													$begin 'MedCamera'
+													$end 'MedCamera'
+												$end 'CurveMed'
+											$end 'DispType'
+										$end 'WrapperDoc'
+										WindowPos(WindowPos(5, -1, -1, -8, -31, 130, 130, 1477, 623))
+									$end 'ViewInfo'
 								$end 'Report2D'
 							$end 'WindowInfoList'
 						$end 'Mass'
@@ -4697,7 +4934,7 @@ $begin 'ProjectPreview'
 		DesignName='RMxprtDesign1'
 		Notes=''
 		Factory='RMxprt'
-		IsSolved=false
+		IsSolved=true
 		'Nominal Setups'[1: 'Setup1']
 		'Nominal Setup Types'[1: '']
 		'Optimetrics Setups'[0:]
