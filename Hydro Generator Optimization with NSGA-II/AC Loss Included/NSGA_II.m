@@ -26,8 +26,8 @@ nVar = 7;             % Number of Decision Variables
 
 VarSize = [1 nVar];   % Size of Decision Variables Matrix 
 
-Do_max = 6e3;   % mm
-Do_min = 6e3;   % mm
+Do_max = 6.858e3;   % mm
+Do_min = 6.858e3;   % mm
 
 k_min = 0.7;
 k_max = (Do_min - 2*152-200)/Do_min;
@@ -51,8 +51,9 @@ copperSkinDepth = 9.22; %mm @50Hz
 strand_Insulation = 0.22; %mm
 main_Insulation = 3; %mm
 carbon_Paper_Thick = 0.2; %mm
+
 b2_max = copperSkinDepth*2 + 2*strand_Insulation + 2*main_Insulation + 2*carbon_Paper_Thick;
-b2_min = pi*Do_min*k_min/Q_max*0.25;
+b2_min = pi*Do_min*k_min/Q_max*0.4;
 
 VarMin=[Do_min k_min airgap_min Ls_min b2_min h2_min Q_min]; % Lower Bound of Variables  
 VarMax=[Do_max k_max airgap_max Ls_max b2_max h2_max Q_max]; % Upper Bound of Variables  
@@ -65,9 +66,9 @@ nObj =2; % Number of Objective Functions
 
 %% NSGA II Parameters
 
-MaxIt = 100;      % Maximum Number of Iterations 
+MaxIt = 2;      % Maximum Number of Iterations 
 
-nPop = 300;        % Population Size 
+nPop = 10;        % Population Size 
 
 pCrossover = 0.7;                         % Crossover Percentage  
 %nCrossover = 2*round(pCrossover*nPop/2);  % Number of Partners (Offsprings)

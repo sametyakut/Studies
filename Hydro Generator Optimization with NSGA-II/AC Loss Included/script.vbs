@@ -15,17 +15,18 @@ Set oDesktop = oAnsoftApp.GetAppDesktop()
  
 projectName = "trialModel_v2" 
 designName = "RMxprtDesign1" 
-outDia = 6000.000000 
-Dr = 5472.400000 
-airgap = 11.800000 
-Ls = 866.400000 
-b2 = 25.000000 
-h2 = 106.900000 
-Q = 306.000000 
+outDia = 6858.000000 
+Dr = 4744.600000 
+airgap = 28.000000 
+Ls = 1573.900000 
+b2 = 21.800000 
+h2 = 252.400000 
+Q = 297.000000 
 lambda = 9.000000 
-wireWidth = 9.100000 
-wireHeight = 1.514000 
-dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/" 
+wireWidth = 7.480000 
+wireHeight = 2.064000 
+strands = 100.000000 
+dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/AC Loss Included/" 
  
 Set oProject = oDesktop.SetActiveProject(projectName) 
 Set oDesign = oProject.SetActiveDesign(designName) 
@@ -65,6 +66,8 @@ oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Arra
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:wireWidth", "Value:=", cstr(wireWidth) + "mm")))) 
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _ 
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:wireHeight", "Value:=", cstr(wireHeight) + "mm")))) 
+oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _ 
+  "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:strands", "Value:=", cstr(strands))))) 
  
 oProject.Save 
 oDesign.Analyze "Setup1" 

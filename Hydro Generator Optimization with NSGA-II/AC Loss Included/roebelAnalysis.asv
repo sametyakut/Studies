@@ -99,15 +99,15 @@ height_strand_X=[height_strand_X height_strand];
                      % according to number of vertical...
                      % strands and slot copper height for single copper
 
-%  if i>1 && (P_eddy_tot(i)+Pdc_tot(i)-P_eddy_tot(i-1)-Pdc_tot(i-1))/Pdc_tot(1) < 0.01
-%      index = i;
-%      break
-%  end
-%  i = i +1;
-% end
+ if i>1 && (P_eddy_tot(i)+Pdc_tot(i)-P_eddy_tot(i-1)-Pdc_tot(i-1))/Pdc_tot(1) < 0.01
+     index = i;
+     break
+ end
+ i = i +1;
+end
 
 totalCopperLoss = Pdc_tot + P_eddy_tot;
-[minimumLoss, index] = min(totalCopperLoss);
+%[minimumLoss, index] = min(totalCopperLoss);
 minimumLoss = totalCopperLoss(index);
 
 copperLoss = minimumLoss

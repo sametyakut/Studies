@@ -17,7 +17,7 @@ else
 try
 delete *.csv
 
-dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/"; % working directory
+dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/AC Loss Included/"; % working directory
                                                                          % note that vbs uses
                                                                            % slash in path names
                                                                            % (not back slash)
@@ -48,21 +48,7 @@ else
 end
 
 % x(5): slot width (b2), x(6): slot height (h2)
-carbonPaperThickness = 0.2; % mm
-mainInsulation = 3; % mm
-numOfHorizontalStrands = 2;
-strandInsulationThickness = 0.2; % mm
-
-wedgeHeightInModel = 4; % mm
-slotSpacerHeight = 5.5; % mm
-springThickness = 1; % mm
-actualWedgeHeight = 5.5; % mm
-numOfVerticalStrands = 25; % in total 48 strands are present
-
-% calculating strand dimensions
-copperWidth = (x(5) - 2*carbonPaperThickness - 2*mainInsulation)/numOfHorizontalStrands - strandInsulationThickness;
-copperHeight = ((x(6) + wedgeHeightInModel - slotSpacerHeight - actualWedgeHeight - 2*springThickness - carbonPaperThickness) ...
-    /2 - 2*mainInsulation)/numOfVerticalStrands - strandInsulationThickness;
+[armatureCopperLoss,numberOfStrands,copperWidth,copperHeight] = roebelAnalysis(x(4),Q,x(5),x(6));
 
 % connecting ANSYS
 projectName = "trialModel_v2"; % ANSYS EM Project Name
@@ -101,8 +87,9 @@ while true
         fprintf(scrMod, "h2 = %f \n", x(6));
         fprintf(scrMod, "Q = %f \n", Q);
         fprintf(scrMod, "lambda = %f \n", y);
-        fprintf(scrMod, "wireWidth = %f \n", copperWidth);
-        fprintf(scrMod, "wireHeight = %f \n", copperHeight);
+        fprintf(scrMod, "wireWidth = %f \n", copperWidth*1e3);
+        fprintf(scrMod, "wireHeight = %f \n", copperHeight*1e3);
+        fprintf(scrMod, "strands = %f \n", numberOfStrands);
         fprintf(scrMod, 'dir = "%s" \n', dir);
 
     else % copying the rest of the code from the original script
@@ -122,31 +109,25 @@ SCR = 1/Xd_pu;
 
 % material mass calculation
 mass = xlsread('Mass.csv');
-copperMass = mass(end,2);
+copperMass = mass(end,2)*2.2;
 steelMass = mass(end,3)/0.7; % assuming 30% wastage
 totalMaterialCost = copperMass*copperPrice + steelMass*steelPrice;
 initCost = totalMaterialCost*2.5; % including labor cost, for simplicity multiplied with 2.5
 
-% This is not used for now
-% loss = xlsread('Losses.csv');
-% armatureCopperLoss = loss(end,2);
-% fieldCopperLoss = loss(end,3);
-% coreLoss = loss(end,4);
-% mechanicalLosses = 308; % kW
-% totalLoss = armatureCopperLoss + fieldCopperLoss + coreLoss + mechanicalLosses;
-% totalLossHour = totalLoss/1e3*3600; % MWh conversion
-% totalLossCost = totalLossHour*elecPrice;
+% Exporting core and field losses
+loss = xlsread('Losses.csv');
+fieldCopperLoss = loss(end,3)*1e3
+coreLoss = loss(end,4)*1e3
+mechanicalLosses = 308e3; % kW
+totalLoss = armatureCopperLoss + fieldCopperLoss + coreLoss + mechanicalLosses;
 
-% totalIncome = 40/3*3600*elecPrice; % 40 MW of generation with 8 hours of working per day
-
-% Efficiency reading for cost
-eff = xlsread('Efficiency.csv');
-efficiency = eff(end,2);
+% Efficiency 
+efficiency = 40e6/(totalLoss + 40e6)*100
 
 % assigning cost with penalty functions
 if SCR < 0.8
-    f1 = initCost + 1e6*(1/SCR)^4;
-    f2 = 1/efficiency + 1e6*(1/SCR)^4;
+    f1 = initCost + 1e8*(1/SCR)^4;
+    f2 = 1/efficiency + 1e8*(1/SCR)^4;
 else
     f1 = initCost;
     f2 = 1/efficiency;

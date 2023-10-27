@@ -53,6 +53,8 @@ oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Arra
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:wireWidth", "Value:=", cstr(wireWidth) + "mm"))))
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:wireHeight", "Value:=", cstr(wireHeight) + "mm"))))
+oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
+  "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:strands", "Value:=", cstr(strands)))))
 
 oProject.Save
 oDesign.Analyze "Setup1"
