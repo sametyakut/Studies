@@ -16,16 +16,16 @@ Set oDesktop = oAnsoftApp.GetAppDesktop()
 projectName = "trialModel_v2" 
 designName = "RMxprtDesign1" 
 outDia = 6858.000000 
-Dr = 4744.600000 
-airgap = 28.000000 
-Ls = 1573.900000 
-b2 = 21.800000 
-h2 = 252.400000 
-Q = 297.000000 
-lambda = 9.000000 
-wireWidth = 7.480000 
-wireHeight = 2.064000 
-strands = 100.000000 
+Dr = 6114.800000 
+airgap = 28.700000 
+Ls = 1870.100000 
+b2 = 22.700000 
+h2 = 101.500000 
+Q = 255.000000 
+lambda = 7.000000 
+wireWidth = 7.930000 
+wireHeight = 1.717500 
+strands = 38.000000 
 dir = "C:/Users/samet/Documents/GitHub/Studies/Hydro Generator Optimization with NSGA-II/AC Loss Included/" 
  
 Set oProject = oDesktop.SetActiveProject(projectName) 
@@ -44,7 +44,8 @@ oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Stator", Array("NAME:Pr
 oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Winding", Array("NAME:PropServers",  _ 
   "Stator:Winding"), Array("NAME:ChangedProps", Array("NAME:Parallel Branches", "Value:=",  _ 
   "1"), Array("NAME:Conductors per Slot", "Value:=", "2"), Array("NAME:Coil Pitch", "Value:=",  _ 
-  cstr(lambda)), Array("NAME:Number of Strands", "Value:=", "strands"), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _ 
+  cstr(lambda)), Array("NAME:Number of Strands", "Value:=", _ 
+  cstr(strands)), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _ 
   "0mm", "WireSizeGauge:=", "STANDARDRECT", "WireSizeWireWidth:=", "wireWidth", "WireSizeWireThickness:=",  _ 
   "wireHeight", "WireSizeMixedWireRectType:=", false, Array("NAME:WireSizeMixedDiameter"), Array("NAME:WireSizeMixedWidth"), Array("NAME:WireSizeMixedThickness"), Array("NAME:WireSizeMixedThicknessMixedFillet"), Array("NAME:WireSizeMixedThicknessMixedNumber")), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _ 
   "0mm", "WireSizeGauge:=", "STANDARDRECT", "WireSizeWireWidth:=", "wireWidth", "WireSizeWireThickness:=",  _ 
@@ -68,6 +69,10 @@ oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Arra
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:wireHeight", "Value:=", cstr(wireHeight) + "mm")))) 
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _ 
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:strands", "Value:=", cstr(strands))))) 
+ 
+oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Winding", Array("NAME:PropServers",  _ 
+  "Stator:Winding"), Array("NAME:ChangedProps", Array("NAME:Number of Strands", "Value:=",  _ 
+  cstr(strands))))) 
  
 oProject.Save 
 oDesign.Analyze "Setup1" 

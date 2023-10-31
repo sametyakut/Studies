@@ -31,8 +31,7 @@ oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Stator", Array("NAME:Pr
 oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Winding", Array("NAME:PropServers",  _
   "Stator:Winding"), Array("NAME:ChangedProps", Array("NAME:Parallel Branches", "Value:=",  _
   "1"), Array("NAME:Conductors per Slot", "Value:=", "2"), Array("NAME:Coil Pitch", "Value:=",  _
-  cstr(lambda)), Array("NAME:Number of Strands", "Value:=", _
-  cstr(strands)), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _
+  cstr(lambda)), Array("NAME:Number of Strands", "Value:=", "strands"), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _
   "0mm", "WireSizeGauge:=", "STANDARDRECT", "WireSizeWireWidth:=", "wireWidth", "WireSizeWireThickness:=",  _
   "wireHeight", "WireSizeMixedWireRectType:=", false, Array("NAME:WireSizeMixedDiameter"), Array("NAME:WireSizeMixedWidth"), Array("NAME:WireSizeMixedThickness"), Array("NAME:WireSizeMixedThicknessMixedFillet"), Array("NAME:WireSizeMixedThicknessMixedNumber")), Array("NAME:Wire Size", "WireSizeWireDiameter:=",  _
   "0mm", "WireSizeGauge:=", "STANDARDRECT", "WireSizeWireWidth:=", "wireWidth", "WireSizeWireThickness:=",  _
@@ -57,9 +56,6 @@ oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Arra
 oDesign.ChangeProperty Array("NAME:AllTabs", Array("NAME:LocalVariableTab", Array("NAME:PropServers",  _
   "LocalVariables"), Array("NAME:ChangedProps", Array("NAME:strands", "Value:=", cstr(strands)))))
 
-oEditor.ChangeProperty Array("NAME:AllTabs", Array("NAME:Winding", Array("NAME:PropServers",  _
-  "Stator:Winding"), Array("NAME:ChangedProps", Array("NAME:Number of Strands", "Value:=",  _
-  cstr(strands)))))
 
 oProject.Save
 oDesign.Analyze "Setup1"

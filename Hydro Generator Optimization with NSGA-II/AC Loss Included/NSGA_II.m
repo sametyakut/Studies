@@ -68,7 +68,7 @@ nObj =2; % Number of Objective Functions
 
 MaxIt = 2;      % Maximum Number of Iterations 
 
-nPop = 10;        % Population Size 
+nPop = 5;        % Population Size 
 
 pCrossover = 0.7;                         % Crossover Percentage  
 %nCrossover = 2*round(pCrossover*nPop/2);  % Number of Partners (Offsprings)

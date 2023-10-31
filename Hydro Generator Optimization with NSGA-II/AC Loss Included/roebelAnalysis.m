@@ -56,7 +56,7 @@ B=linspace(0,Bmax,numberOfverticalStrand*2); % B for each strand
 
 Ke= pi^2/(6*ro);                % The constant for eddy losses
 
-height_strand=(total_height/numberOfverticalStrand)-strandInsulation; %corrected with below one
+height_strand=total_height/(numberOfverticalStrand+1)-strandInsulation; %corrected with below one
                                 % the height for strand according to 
                                 % strand number
 
@@ -107,11 +107,10 @@ height_strand_X=[height_strand_X height_strand];
 % end
 
 totalCopperLoss = Pdc_tot + P_eddy_tot;
-[minimumLoss, index] = min(totalCopperLoss);
-minimumLoss = totalCopperLoss(index);
+[minLoss, index] = min(totalCopperLoss);
 
-copperLoss = minimumLoss
-strandNumber = strand(index)*2
-strandWidth = width_strand % in ANSYS, mm is already defined
-strandHeight = height_strand_X(index)
+copperLoss = minLoss;
+strandNumber = strand(index)*2;
+strandWidth = width_strand; % in ANSYS, mm is already defined
+strandHeight = height_strand_X(index);
 end

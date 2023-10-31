@@ -116,13 +116,13 @@ initCost = totalMaterialCost*2.5; % including labor cost, for simplicity multipl
 
 % Exporting core and field losses
 loss = xlsread('Losses.csv');
-fieldCopperLoss = loss(end,3)*1e3
-coreLoss = loss(end,4)*1e3
+fieldCopperLoss = loss(end,3)*1e3;
+coreLoss = loss(end,4)*1e3;
 mechanicalLosses = 308e3; % kW
 totalLoss = armatureCopperLoss + fieldCopperLoss + coreLoss + mechanicalLosses;
 
 % Efficiency 
-efficiency = 40e6/(totalLoss + 40e6)*100
+efficiency = 40e6/(totalLoss + 40e6)*100;
 
 % assigning cost with penalty functions
 if SCR < 0.8
