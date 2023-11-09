@@ -66,7 +66,7 @@ nObj =2; % Number of Objective Functions
 
 %% NSGA II Parameters
 
-MaxIt = 2;      % Maximum Number of Iterations 
+MaxIt = 1;      % Maximum Number of Iterations 
 
 nPop = 5;        % Population Size 
 
