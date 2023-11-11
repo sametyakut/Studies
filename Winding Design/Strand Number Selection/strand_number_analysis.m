@@ -93,19 +93,19 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 yyaxis(axes1,'left');
 plot(strand-1,(P_eddy_tot+Pdc_tot)/Pdc_tot(1),'LineStyle',"-",'Color','k' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','k');
-ylabel('DC ve Eddy Kay{\i}plar{\i} (p.u) ')
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','k');
+ylabel('DC and Eddy Losses (p.u) ')
 hold on;
 set(axes1,'YColor',[0 0 0]);
 yyaxis(axes1,'right');
 plot(strand-1,1000*height_strand_X,'LineStyle',"-",'Color','b' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','b');
-ylabel('Spir Y\"{u}ksekli\u{g}i (mm)')
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','b');
+ylabel('Strand Height (mm)')
 hold on;
 set(axes1,'YColor',[0 0 1]);
-xlabel('Dikey Spir Say{\i}s{\i}')
+xlabel('Vertical Strands')
 ax = gca; % current axes
-ax.FontSize = 15;
+ax.FontSize = 24;
 ax.FontName= 'Times New Roman';
 %yticks(0:0.2:1)
 xlim([6 numberOfverticalStrand])
@@ -119,19 +119,19 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 yyaxis(axes1,'left');
 plot(strand-1,(P_eddy_tot)/Pdc_tot(1),'LineStyle',"-",'Color','k' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','k');
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','k');
 ylabel('AC resistance(p.u) ')
 hold on;
 set(axes1,'YColor',[0 0 0]);
 yyaxis(axes1,'right');
 plot(strand-1,1000*height_strand_X,'LineStyle',"-",'Color','b' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','b');
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','b');
 ylabel('Strand Height (mm)')
 hold on;
 set(axes1,'YColor',[0 0 1]);
 xlabel('Vertical Strands')
 ax = gca; % current axes
-ax.FontSize = 15;
+ax.FontSize = 24;
 ax.FontName= 'Times New Roman';
 %yticks(0:0.2:1)
 xlim([6 numberOfverticalStrand])
@@ -145,19 +145,19 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 yyaxis(axes1,'left');
 plot(strand-1,(Pdc_tot)/Pdc_tot(1),'LineStyle',"-",'Color','k' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','k');
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','k');
 ylabel('DC resistance(p.u) ')
 hold on;
 set(axes1,'YColor',[0 0 0]);
 yyaxis(axes1,'right');
 plot(strand-1,1000*height_strand_X,'LineStyle',"-",'Color','b' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','b');
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','b');
 ylabel('Strand Height (mm)')
 hold on;
 set(axes1,'YColor',[0 0 1]);
 xlabel('Vertical Strands')
 ax = gca; % current axes
-ax.FontSize = 15;
+ax.FontSize = 24;
 ax.FontName= 'Times New Roman';
 %yticks(0:0.2:1)
 xlim([6 numberOfverticalStrand])
@@ -171,19 +171,19 @@ axes1 = axes('Parent',figure1);
 hold(axes1,'on');
 yyaxis(axes1,'left');
 plot(strand-1,(P_eddy_tot+Pdc_tot),'LineStyle',"-",'Color','k' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','k');
-ylabel('DC ve Eddy Kay{\i}plar{\i} (p.u) ')
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','k');
+ylabel('DC and Eddy Losses (p.u) ')
 hold on;
 set(axes1,'YColor',[0 0 0]);
 yyaxis(axes1,'right');
 plot(strand-1,1000*height_strand_X,'LineStyle',"-",'Color','b' ...
-    ,'Marker','x','MarkerSize',10,'MarkerFaceColor','b');
-ylabel('Spir Y\"{u}ksekli\u{g}i (mm)')
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','b');
+ylabel('Strand Height (mm)')
 hold on;
 set(axes1,'YColor',[0 0 1]);
-xlabel('Dikey Spir Say{\i}s{\i}')
+xlabel('Vertical Strands')
 ax = gca; % current axes
-ax.FontSize = 15;
+ax.FontSize = 24;
 ax.FontName= 'Times New Roman';
 %yticks(0:0.2:1)
 xlim([6 numberOfverticalStrand])
