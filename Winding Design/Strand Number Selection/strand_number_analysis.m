@@ -191,8 +191,23 @@ xticks(6:3:numberOfverticalStrand+1)
 % ylim([0 1])
 grid on;
 % grid minor;
-
-
+%%
+figure1 = figure;
+plot(strand-1,(Pdc_tot)/Pdc_tot(1),'LineStyle',"-",'Color','k' ...
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','k');
+hold on;
+plot(strand-1,(P_eddy_tot)/Pdc_tot(1),'LineStyle',"-",'Color','r' ...
+    ,'Marker','x','MarkerSize',15,'MarkerFaceColor','k');
+ylabel('Resistance(p.u) ')
+xlabel('Vertical Strands')
+ax = gca; % current axes
+ax.FontSize = 24;
+ax.FontName= 'Times New Roman';
+%yticks(0:0.2:1)
+xlim([6 numberOfverticalStrand])
+xticks(6:3:numberOfverticalStrand+1)
+grid on
+legend('DC Resistance','AC Resistance')
 
 
 
